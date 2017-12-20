@@ -7,7 +7,7 @@
       密码：<input type="text" v-model="passWord">
     </div>
     <div>
-      <button @click="setPrams">登陆</button>
+      <button @click="setPrams">登陆{{10003233 | changeHexElse}}</button>
     </div>
     <button>
     <router-link :to="{ name: 'index'}">views</router-link>
