@@ -28,12 +28,21 @@
       setPrams() {
         this.$store.dispatch('setUserName',this.userName)
         this.$store.dispatch('setPassWord',this.passWord)
+        sessionStorage.setItem('setUserName',this.userName)
+        sessionStorage.setItem('setPassWord',this.passWord)
       },
       getPrams() {
-        console.log(this.test)
+        this.apiServer('http://xpyz.fujiants.com/appweixin.do?v1/articles&str_currentPage=1&str_pageRow=5&name=师资团队')
+          .then((res) => {
+            console.log(res)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
       }
     },
     mounted() {
+      this.getPrams()
     },
     components: {}
   }

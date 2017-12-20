@@ -9,18 +9,32 @@ import flex from '../view/flex.vue'
 import blog from '../view/blog.vue'
 
 Vue.use(Router)
-
 export default new Router({
   routes: [
     {
       path: '/',
       name: 'index',
-      component: index
+      component: index,
+      beforeEnter: (to, from, next) => {
+        if (!sessionStorage.setPassWord && !sessionStorage.setUserName) {
+          next({path:'/login'})
+        }else {
+          next()
+        }
+      }
+      //路由拦截，这样的话每一个对象都要加这句话
     },
     {
       path: '/impression',
       name: 'impression',
-      component: impression
+      component: impression,
+      beforeEnter: (to, from, next) => {
+        if (!sessionStorage.setPassWord && !sessionStorage.setUserName) {
+          next({path:'/login'})
+        }else {
+          next('/')
+        }
+      }
     },
     {
       path: '/views',
@@ -35,7 +49,14 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: login
+      component: login,
+      beforeEnter: (to, from, next) => {
+        if (!sessionStorage.setPassWord && !sessionStorage.setUserName) {
+          next()
+        }else {
+          next('/')
+        }
+      }
     },
     {
       path: '/flex',
@@ -49,3 +70,4 @@ export default new Router({
     }
   ]
 })
+
