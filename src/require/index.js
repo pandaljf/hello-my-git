@@ -2,9 +2,9 @@
 import axios from 'axios'
 export default function (url) {
   return new Promise((reject,resolve) => {
-    axios.get(url).then((res) => {
-        const resData = res.data.page.listContent
-        resolve(resData)
+    axios.get(url,{headers:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vd3d3LmNhci1zZXJ2ZXIuY29tLy9hcGkvYXV0aC9sb2dpbiIsImlhdCI6MTUxMzIxNDc2OCwiZXhwIjoxNTE1ODA2NzY4LCJuYmYiOjE1MTMyMTQ3NjgsImp0aSI6InBrMzBhVmFZQk5qaGpzYmsiLCJzdWIiOiIxMDI5NzA3OTUzNjU5MTgzMTA0In0.IZ307vnCjQRb7Zd-80fpNycaReseo5rw9Vo6NRoGufk'}).then((res) => {
+        // const resData = res.data.page.listContent
+        resolve(res)
       })
       .catch((err) => {
         reject(err)

@@ -32,7 +32,7 @@
         sessionStorage.setItem('setPassWord',this.passWord)
       },
       getPrams() {
-        this.apiServer('http://xpyz.fujiants.com/appweixin.do?v1/articles&str_currentPage=1&str_pageRow=5&name=师资团队')
+        this.apiServer('http://www.car-server.com/api/application/index')
           .then((res) => {
             console.log(res)
           })

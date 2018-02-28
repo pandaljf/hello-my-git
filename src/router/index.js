@@ -50,6 +50,7 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login,
+      // meta: { keepAlive: true },
       beforeEnter: (to, from, next) => {
         if (!sessionStorage.setPassWord && !sessionStorage.setUserName) {
           next()
