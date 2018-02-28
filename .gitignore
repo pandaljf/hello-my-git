@@ -2,6 +2,8 @@
 #/a	#忽略根目录(.gitignore所在目录)下的a目录
 #a/	#.gitignore所在目录下的a目录
 #/a/b/*.html	#忽略根目录(.gitignore所在目录)下的a目录下b目录下的所有html文件
-*.html
+#*.html #忽略所有html文件
 #/b
 #c/
+
+**/c
